@@ -22,3 +22,11 @@ Route::get('/', function () {
 Route::get('/test',function(){
     broadcast(new Hello());
 });
+
+Route::get('/test2',function(){
+    return view('test');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

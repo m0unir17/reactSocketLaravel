@@ -14,20 +14,22 @@ class Hello implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $data;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data = 'nothing')
     {
-        //
+        $this->data =   $data;
     }
 
     public function broadcastWith()
     {
         return [
-            'hello' =>  'there'
+            'hello' =>  $this->data
         ];
     }
 
