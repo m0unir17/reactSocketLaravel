@@ -19,9 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test',function(){
-    broadcast(new Hello());
-});
+Route::get('/test',[App\Http\Controllers\TestController::class,'test']);
 
 Route::get('/test2',function(){
     return view('test');

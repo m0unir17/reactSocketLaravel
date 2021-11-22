@@ -29,7 +29,7 @@ class Hello implements ShouldBroadcast
     public function broadcastWith()
     {
         return [
-            'hello' =>  $this->data
+            'phrase' =>  $this->data
         ];
     }
 

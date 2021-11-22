@@ -11,7 +11,8 @@ function Testcomponent (props){
 
         Echo.channel('channel')
             .listen('Hello',(e)=>{
-                console.log(e.hello);
+                setPhrase('e.phrase')
+                console.log(e.phrase);
             });
 
     },[])
