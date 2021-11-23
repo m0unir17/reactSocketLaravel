@@ -13,18 +13,19 @@ use \App\Events\Hello;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/test',[App\Http\Controllers\TestController::class,'test']);
-
-Route::get('/test2',function(){
-    return view('test');
-});
-
+Route::view('/{any}','app')->where('any','.*');
+//
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//
+//Route::post('/test',[App\Http\Controllers\TestController::class,'test']);
+//
+//Route::get('/test2',function(){
+//    return view('test');
+//});
+//
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
