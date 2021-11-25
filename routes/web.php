@@ -13,6 +13,7 @@ use \App\Events\Hello;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::view('/{any}','app')->where('any','.*');
 //
 //Route::get('/', function () {
@@ -22,9 +23,7 @@ Route::view('/{any}','app')->where('any','.*');
 //
 //Route::post('/test',[App\Http\Controllers\TestController::class,'test']);
 //
-//Route::get('/test2',function(){
-//    return view('test');
-//});
+
 //
 Auth::routes();
 //

@@ -76,9 +76,9 @@
 
         <main class="py-4">
             <div id="root">
-                <App></App>
+                <App />
             </div>
-            <script src="/js/app.js"></script>
+            <script src="{{asset('/js/app.js')}}" defer></script>
         </main>
     </div>
 </body>

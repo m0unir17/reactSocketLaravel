@@ -9,6 +9,6 @@ class TestController extends Controller
 {
     public function test(Request $request)
     {
-        broadcast(new Hello());
+        broadcast(new Hello($request->phrase));
     }
 }

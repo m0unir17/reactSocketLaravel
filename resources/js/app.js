@@ -20,16 +20,17 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from './router'
-function App() {
+import { Link } from "react-router-dom";
+
+export default function App() {
     return (
         <div>
-            <Router/>
+            <Link to="/">Home</Link> |{" "}
         </div>
     );
 }
 
-export default App;
+
 
 if (document.getElementById('root')) {
     ReactDOM.render(<App />, document.getElementById('root'));

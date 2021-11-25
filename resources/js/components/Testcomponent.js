@@ -4,16 +4,24 @@ import ReactDOM from 'react-dom';
 
 function Testcomponent (props){
 
-    const [phrase, setPhrase] = useState('');
+    const [phrase, setPhrase] = useState(["baba"]);
+    let  phrase2 = '';
+
+    function changePhrase (ph)
+    {
+        setPhrase(()=>[...phrase , ph]);
+    }
+
+    useEffect(() => {
+        changePhrase(phrase2)
+        console.log(phrase)
+    }, [phrase2])
 
     useEffect(()=>{
         console.log('hawchtaho');
 
         Echo.channel('channel')
-            .listen('Hello',(e)=>{
-                setPhrase('e.phrase')
-                console.log(e.phrase);
-            });
+            .listen('Hello',changePhrase);
 
     },[])
 
@@ -25,8 +33,10 @@ function Testcomponent (props){
                     Hello from Test Component !
                 </div>
                 <div className="card-body">
-                    <p>this is the phrase : {phrase}</p>
+                    {/*{phrase.forEach(element => <p>this is the message : {element}</p>)}*/}
 
+                    {phrase}
+                    {/*<phraseComponents phrase={phrase} />*/}
                 </div>
                 <div className="card-footer">
                     This is the footer
@@ -34,14 +44,13 @@ function Testcomponent (props){
             </div>
         </div>
     );
-
 }
 
 
 export default Testcomponent;
 
 if (document.getElementById('testCompon')) {
-    const testcom = ReactDOM.render(<Testcomponent name = {'hey there'}/>, document.getElementById('testCompon'));
+    ReactDOM.render(<Testcomponent name = {'hey there'}/>, document.getElementById('testCompon'));
 }
 
 

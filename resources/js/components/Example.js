@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import Bouton from './Bouton.js';
 
 const Example = () => {
+    const [phrase, setPhrase] = useState("")
 
     return (
         <div className="container" style={{marginTop: "10px"}}>
@@ -12,10 +13,22 @@ const Example = () => {
                         <div className="card-header">Example Component</div>
 
                         <div className="card-body">
-                            <div className="card-text">I'm an example component!</div>
-                            <input id={'dataSent'} value={''} />
+                            <div className="form-group">
 
-                            <Bouton name={'Send Event'} />
+                                <div className="card-text">I'm an example component!</div>
+                                <input type={'text'}
+                                       onChange={(text) => setPhrase(text.target.value)}
+                                       value={phrase}
+                                       className="form-control"
+                                       placeholder="Search..."
+                                       id={'dataSent'}
+                                />
+
+                                <Bouton
+                                    phrase={phrase}
+                                    name={'Send Event'}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
