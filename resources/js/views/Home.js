@@ -6,10 +6,10 @@ function Home() {
         <div className="container">
             <div className={'card'}>
                 <div className="card-header">
-                    This is the header
+                    Home
                 </div>
                 <div className="card-body">
-                    this is the body
+                    This is the Home component
                 </div>
             </div>
         </div>

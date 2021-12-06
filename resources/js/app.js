@@ -4,7 +4,7 @@
 //  * building robust, powerful web applications using React + Laravel.
 //  */
 //
-// require('./bootstrap');
+ require('./bootstrap');
 //
 // /**
 //  * Next, we will create a fresh React component instance and attach it to
@@ -20,13 +20,25 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from "react-router-dom";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import "../css/app.css"
+import Home from "./views/Home"
+import Receiver from "./views/Receiver";
+import Example from "./components/Example";
+// import {Index} from './views/index'
 
 export default function App() {
     return (
-        <div>
-            <Link to="/">Home</Link> |{" "}
-        </div>
+            <BrowserRouter>
+                <div className="App">
+                    <h1>Welcome to React Router!</h1>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/receiver" element={<Receiver />} />
+                        <Route path={"/home"} element={<Example/>} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
     );
 }
 

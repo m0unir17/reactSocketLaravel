@@ -14,7 +14,7 @@ function Bouton (props) {
 
     function triggerEvent (){
         console.log(props.data)
-        axios.post('http://127.0.0.1:8000/test', {
+        axios.post('http://127.0.0.1:8000/api/test', {
             phrase: props.phrase
         }).then(() => {
             console.log('axios')

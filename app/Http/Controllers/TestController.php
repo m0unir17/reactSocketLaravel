@@ -11,4 +11,9 @@ class TestController extends Controller
     {
         broadcast(new Hello($request->phrase));
     }
+
+    public function showView()
+    {
+        return view('app');
+    }
 }

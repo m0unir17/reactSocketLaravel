@@ -14,17 +14,19 @@ use \App\Events\Hello;
 |
 */
 
-Route::view('/{any}','app')->where('any','.*');
+Route::post('/test',[App\Http\Controllers\TestController::class,'test']);
+Route::any('/{any}',[App\Http\Controllers\TestController::class,'showView'])->where('any','[a-zA-Z]+');
+//
 //
 //Route::get('/', function () {
 //    return view('welcome');
 //});
 //
 //
-//Route::post('/test',[App\Http\Controllers\TestController::class,'test']);
+
 //
 
 //
-Auth::routes();
+//Auth::routes();
 //
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

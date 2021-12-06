@@ -75,9 +75,7 @@
         </nav>
 
         <main class="py-4">
-            <div id="root">
-                <App />
-            </div>
+            <div id="root"></div>
             <script src="{{asset('/js/app.js')}}" defer></script>
         </main>
     </div>
