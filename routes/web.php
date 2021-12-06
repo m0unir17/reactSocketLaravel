@@ -14,8 +14,9 @@ use \App\Events\Hello;
 |
 */
 
-Route::post('/test',[App\Http\Controllers\TestController::class,'test']);
-Route::any('/{any}',[App\Http\Controllers\TestController::class,'showView'])->where('any','[a-zA-Z]+');
+Route::get('/{any}',[App\Http\Controllers\TestController::class,'showView'])->where('any','[a-zA-Z]+');
+Route::post('/api/test',[App\Http\Controllers\TestController::class, 'test']);
+
 //
 //
 //Route::get('/', function () {
@@ -27,6 +28,6 @@ Route::any('/{any}',[App\Http\Controllers\TestController::class,'showView'])->wh
 //
 
 //
-//Auth::routes();
+Auth::routes();
 //
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

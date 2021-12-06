@@ -9,18 +9,23 @@ function Bouton (props) {
     const [data , setData] = useState('');
 
     useEffect(()=>{
+        console.log('mounted')
        setData(props.data);
     });
 
+
     function triggerEvent (){
-        console.log(props.data)
+        console.log('data '+props.data)
         axios.post('http://127.0.0.1:8000/api/test', {
-            phrase: props.phrase
+                phrase: props.phrase
         }).then(() => {
             console.log('axios')
+        }).catch(() => {
+            console.log('error')
         })
         console.log('triggered');
     }
+
     return (
         <button className={'btn btn-primary'} onClick={triggerEvent}>{props.name}</button>
     );
@@ -29,6 +34,3 @@ function Bouton (props) {
 
 export default Bouton;
 
-if (document.getElementById('bouton')) {
-    ReactDOM.render(<Bouton />, document.getElementById('bouton'));
-}

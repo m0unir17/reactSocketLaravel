@@ -1,6 +1,7 @@
 import React from 'react';
 import Bouton from "../components/Bouton";
 import SwitchViewButton from "../components/SwitchViewButton";
+import Testcomponent from "../components/Testcomponent";
 
 const divStyle = {
     color: 'blue',
@@ -11,12 +12,7 @@ function Receiver(props) {
     return (
         <div className="container">
             Receiver
-            <SwitchViewButton name={"Click me!"}
-                              link={"/"}
-                              style={divStyle}
-            />
-
-            <SwitchViewButton name={"Home"} link={"/Home"}/>
+            <Testcomponent name={'Receiver of the event'}/>
         </div>
     );
 }

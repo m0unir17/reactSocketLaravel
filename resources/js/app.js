@@ -21,7 +21,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter,Routes, Route } from "react-router-dom";
-import "../css/app.css"
 import Home from "./views/Home"
 import Receiver from "./views/Receiver";
 import Example from "./components/Example";

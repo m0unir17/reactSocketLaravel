@@ -26,7 +26,7 @@ const Example = () => {
 
                                 <Bouton
                                     phrase={phrase}
-                                    name={'Send Event'}
+                                    name={'Send Eventt'}
                                 />
                             </div>
                         </div>

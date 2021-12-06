@@ -7,21 +7,19 @@ function Testcomponent (props){
     const [phrase, setPhrase] = useState(["baba"]);
     let  phrase2 = '';
 
-    function changePhrase (ph)
-    {
-        setPhrase(()=>[...phrase , ph]);
-    }
 
-    useEffect(() => {
-        changePhrase(phrase2)
-        console.log(phrase)
-    }, [phrase2])
+    // useEffect(() => {
+    //     changePhrase(phrase2)
+    //     console.log(phrase)
+    // }, [phrase2])
 
     useEffect(()=>{
         console.log('hawchtaho');
 
         Echo.channel('channel')
-            .listen('Hello',changePhrase);
+            .listen('Hello',(e)=>{
+                console.log(e.phrase);
+            });
 
     },[])
 
